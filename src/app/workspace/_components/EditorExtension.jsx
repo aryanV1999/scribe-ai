@@ -30,7 +30,7 @@ function EditorExtension({ editor, fileId }) {
     
     const unformattedResult = await SearchAI({
       query: selectedText,
-      fileId: "kg22zjz8qzk6j23tf64q5kd2wh7c3t0y",
+      fileId: fileId,
     });
     console.log("resul",unformattedResult)
     
