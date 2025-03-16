@@ -6,7 +6,7 @@ import { v } from "convex/values";
 
 // Helper function to get API key
 const getGoogleApiKey = (ctx) => {
-  const apiKey = "AIzaSyAhLwZkLPSidjNnGn7iyve70i4PKaroOFs";
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("Missing GOOGLE_API_KEY environment variable");
   }
