@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import {WebPDFLoader} from "@langchain/community/document_loaders/web/pdf";
 import {RecursiveCharacterTextSplitter} from "langchain/text_splitter"
 
-const pdfUrl="https://robust-anaconda-546.convex.cloud/api/storage/kg22zjz8qzk6j23tf64q5kd2wh7c3t0y"
+// const pdfUrl="https://robust-anaconda-546.convex.cloud/api/storage/kg22zjz8qzk6j23tf64q5kd2wh7c3t0y"
 export async function GET(req){
 
-    //load the pdf file
-    // const reqUrl=req.url;
-    // const {searchParams}=new URL(reqUrl);
-    // const pdfUrl=searchParams.get('pdfUrl');
+    load the pdf file
+    const reqUrl=req.url;
+    const {searchParams}=new URL(reqUrl);
+    const pdfUrl=searchParams.get('pdfUrl');
     const response=await fetch(pdfUrl);
     const data=await response.blob();
     const loader=new WebPDFLoader(data);
